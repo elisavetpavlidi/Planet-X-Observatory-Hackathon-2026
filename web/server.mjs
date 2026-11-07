@@ -8,7 +8,7 @@ import {detectTracks,validateExplore} from './model.mjs';
 import {angularSeparation} from './science.mjs';
 const root=fileURLToPath(new URL('../',import.meta.url));
 const args=process.argv.slice(2),getArg=(key,fallback)=>{const i=args.lastIndexOf(key);return i>=0?args[i+1]:fallback;};
-const port=Number(getArg('--port',process.env.PORT||8501)),host=getArg('--host','127.0.0.1');
+const port=Number(getArg('--port',process.env.PORT||8501)),host=getArg('--host',process.env.RENDER ? '0.0.0.0' : '127.0.0.1');
 const files={'/':['web/index.html','text/html; charset=utf-8'],'/guide':['docs/USER_GUIDE_EL.html','text/html; charset=utf-8'],'/guide.pdf':['docs/Planet_X_User_Guide_EL.pdf','application/pdf'],'/catalog/sky.json':['web/catalog/sky.json','application/json; charset=utf-8'],'/catalog/LICENSE':['web/catalog/LICENSE','text/plain; charset=utf-8'],'/bundled/observation_A.fits':['data/reference/m31/observation_A.fits','application/fits'],'/bundled/observation_B.fits':['data/reference/m31/observation_B.fits','application/fits']};
 for(const name of ['app','science','model','cases','motion','navigator','release'])files['/'+name+'.mjs']=['web/'+name+'.mjs','text/javascript; charset=utf-8'];files['/style.css']=['web/style.css','text/css; charset=utf-8'];files['/guide.css']=['web/guide.css','text/css; charset=utf-8'];
 files['/eureka.css']=['web/eureka.css','text/css; charset=utf-8'];
