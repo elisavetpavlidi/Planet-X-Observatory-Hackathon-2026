@@ -1,0 +1,43 @@
+name: Reproduce and validate
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  web-observatory:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.node-version'
+      - run: bash scripts/reproduce.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reproduction-${{ matrix.os }}
+          path: outputs/reproduced/verification.json
+  spherex-science:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: '0.13.4'
+          python-version: '3.12.14'
+          activate-environment: true
+          enable-cache: true
+      - run: uv pip install -r requirements.txt
+      - run: python -m planetx.cli verify-data
+      - run: python -m pytest -q
+      - run: python scripts/science_report.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: science-report-${{ matrix.os }}
+          path: outputs/science-report
