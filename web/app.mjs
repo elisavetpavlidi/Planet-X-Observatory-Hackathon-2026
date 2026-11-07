@@ -52,12 +52,14 @@ function publishEurekaState(){
  window.dispatchEvent(new CustomEvent('eureka:observation-state',{detail:{
   query:state?.query||null,activeIndex:index,
   frames:frames.map(f=>({id:f.id,key:f.key,observer:f.observer,archive:f.archive,mjd:f.mjd,band:f.band,
-   wavelength_um:f.wavelength_um??null,coverage:f.coverage??null,inspection_only:!!f.inspection_only,
+   wavelength_um:f.wavelength_um??null,bandwidth_um:f.bandwidth_um??null,coverage:f.coverage??null,inspection_only:!!f.inspection_only,
    products:(f.products||[]).map(p=>({kind:p.kind,sha256:p.sha256||null,url:p.url||null}))})),
   active:picked?{id:picked.id,mjd:picked.mjd,observer:picked.observer,archive:picked.archive}:null,
   marks:selected.map(p=>({frame:p.frame,mjd:p.mjd,ra:p.ra,dec:p.dec,x:p.x,y:p.y,origin:p.origin,method:p.method})),
   motion:state?.motion?{status:state.motion.status,label:state.motion.label,shift_arcsec:state.motion.shift_arcsec,
    rate_arcsec_per_hour:state.motion.rate_arcsec_per_hour,duration_hours:state.motion.duration_hours,reason:state.motion.reason}:null,
+  catalog:{total:rows().length,batchStart:Number(state?.batchStart)||0,bundled:!!state?.catalog?.bundled},
+  tracks:(state?.tracks||[]).slice(0,12).map((t,i)=>{const points=t.points.map(p=>({...p,origin:'automatic',method:'raw-pixel aperture centroid'}));return {index:i,points,motion:assessSelection(points,frames)};}),
   identity:identity?{checked:true,candidate:identity.candidates?.[0]?.name||null,cached:!!identity.cached,imported:!!identity.imported}:null
  }}));
 }
@@ -137,6 +139,14 @@ $('sky').onkeydown=e=>{if(e.key==='ArrowLeft'){e.preventDefault();step(-1);}if(e
 sky.onpointerdown=e=>{if(!state?.frames.length)return;sky.setPointerCapture(e.pointerId);pointer={x:e.clientX,y:e.clientY,focus:{...center()}};dragged=false;};sky.onpointermove=e=>{if(!state?.frames.length)return;if(pointer&&Number($('zoom').value)>1){const dx=e.clientX-pointer.x,dy=e.clientY-pointer.y;if(Math.hypot(dx,dy)>4)dragged=true;const s=state.frames[index].n/sky.getBoundingClientRect().width/Number($('zoom').value);focus={x:pointer.focus.x-dx*s,y:pointer.focus.y+dy*s};draw();}const p=toPixel(e),[ra,dec]=currentGrid().pixelToWorld(p.x,p.y);$('coordinates').textContent=`RA ${ra.toFixed(5)}° · Dec ${dec.toFixed(5)}°`;};sky.onpointerup=()=>{pointer=null;};sky.onpointercancel=()=>{pointer=null;dragged=true;};
 sky.onclick=e=>{if(dragged||!state?.frames.length)return;stop();const f=state.frames[index];if(f.inspection_only){message('This partial observation is for visual inspection. Choose another image to mark the source.',true);return;}const p=toPixel(e);if(p.x<0||p.y<0||p.x>=f.n||p.y>=f.n)return;const v=f.image[Math.min(f.n-1,Math.round(p.y))*f.n+Math.min(f.n-1,Math.round(p.x))];if(v===null||v===undefined){message('This position contains missing or quality-masked pixels.',true);return;}message('');const near=f.peaks.reduce((best,q)=>Math.hypot(p.x-q.x,p.y-q.y)<Math.hypot(p.x-best.x,p.y-best.y)?q:best,{x:1e6,y:1e6}),snap=Math.hypot(p.x-near.x,p.y-near.y)<4,track=state.tracks.find(t=>t.points.some(q=>q.frame===index&&Math.hypot(q.x-p.x,q.y-p.y)<5));if(track)selected=track.points.map(q=>({...q,origin:'automatic',method:'raw-pixel aperture centroid'}));else{const point=snap?{...near}:{...p,...Object.fromEntries(['ra','dec'].map((key,j)=>[key,currentGrid().pixelToWorld(p.x,p.y)[j]]))};selected=selected.filter(q=>q.frame!==index);selected.push({...point,frame:index,mjd:f.mjd,origin:'manual',method:snap?'raw-pixel aperture centroid':'manual'});selected.sort((a,b)=>a.frame-b.frame);}identity=null;renderSelection();draw();};
 $('clear').onclick=()=>{selected=[];identity=null;renderSelection();draw();};
+// An EUREKA screening suggestion only selects a track already detected by the unchanged engine.
+window.addEventListener('eureka:select-track',ev=>{
+ const i=Number(ev.detail?.index),t=state?.tracks?.[i];if(!Number.isInteger(i)||i<0||!t)return;
+ stop();selected=t.points.map(p=>({...p,origin:'automatic',method:'raw-pixel aperture centroid'}));
+ identity=null;index=selected[0]?.frame||0;focus=null;$('zoom').value=1;renderSelection();renderFrame();
+});
+window.addEventListener('eureka:next-batch',()=>{if(!busy&&state?.catalog?.observations?.length>(Number(state.batchStart)||0)+12)loadGroup((Number(state.batchStart)||0)+12);});
+
 $('identify').onclick=async()=>{if(!selected.length)return;stop();const fingerprint=JSON.stringify(selected),snapshot=state;$('identify').disabled=true;$('identify').textContent='Checking with JPL…';$('identity').innerHTML='<p class="muted identity-loading">Checking observation times and the telescope position…</p>';try{const response=await api('identify',{points:selected.map(p=>({ra:p.ra,dec:p.dec,mjd:p.mjd})),observer:state.frames[0].observer||'wise'});if(state!==snapshot||JSON.stringify(selected)!==fingerprint)return;identity=response;renderSelection();}catch(err){if(state!==snapshot||JSON.stringify(selected)!==fingerprint)return;$('identity').innerHTML=`<div class="identity-error">${esc(err.message)} Your images and marks remain available.</div>`;}finally{if(state===snapshot&&JSON.stringify(selected)===fingerprint){$('identify').disabled=false;$('identify').textContent='Check identity';}}};
 function download(data,name){const url=URL.createObjectURL(new Blob([JSON.stringify(data)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),5000);}
 $('export').onclick=()=>{if(!state?.frames.length)return;download({...state,version:VERSION,tracks:undefined,selection:selected,identity,motion:assessSelection(selected,state.frames),saved_at:new Date().toISOString(),display:{common_stretch:stretch},notes:'Loaded images and marks are self-contained. The catalog contains all returned metadata, not all image pixels. Masked pixels are null; resampling correlates neighboring display pixels. Tracks are exploratory.'},`PlanetX_session_${state.query.start}.json`);};$('export-catalog').onclick=()=>download({schema:'planetx-observation-list/1',query:state.query,...state.catalog},`PlanetX_observations_${state.query.start}.json`);

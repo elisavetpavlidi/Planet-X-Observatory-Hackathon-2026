@@ -6,5 +6,7 @@ node --check web/server.mjs
 node --check web/app.mjs
 node --check web/eureka.mjs
 node --check web/eureka-quality.mjs
+node --check web/eureka-scout.mjs
+node --check web/eureka-scout-quality.mjs
 node --test tests/*.test.mjs
 echo 'EUREKA verification complete. Start with: bash scripts/run.sh'

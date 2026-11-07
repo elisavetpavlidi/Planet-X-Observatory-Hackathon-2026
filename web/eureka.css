@@ -62,3 +62,22 @@ main{max-width:1580px;padding-top:26px}.e-hero{background:radial-gradient(ellips
 @media(max-width:800px){.e-review-layout{grid-template-columns:1fr}.e-path-grid.e-path-three{grid-template-columns:1fr}.e-path-grid.e-path-three .e-path-discovery{grid-column:auto}.e-review-flow{font-size:10px}}
 
 .e-search-hint{font-size:11px;color:#5a6087;line-height:1.65;background:#f1eff9;padding:10px 11px;border-radius:8px;margin:1px 0 13px}
+
+/* v5: scientifically bounded, beginner-friendly live candidate scanner. */
+.e-scout{padding:32px;margin:30px 0;border:1px solid #dcd8e9;border-radius:22px;background:#f9f8fd;scroll-margin-top:24px}
+.e-scout-heading{display:flex;justify-content:space-between;gap:20px;align-items:center}
+.e-scout-heading h2{font-size:clamp(25px,3vw,34px);letter-spacing:-.8px;color:#202b48;margin:9px 0}
+.e-scout-heading p{font-size:13px;color:#667186;max-width:770px;line-height:1.8;margin:0}
+.e-scout-mark{font-size:10px;font-weight:800;color:#62509b;letter-spacing:1px;white-space:nowrap}
+.e-scout-toolbar{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 14px}.e-scout-toolbar button{font-size:12px}
+.e-scout-toolbar button:disabled{opacity:.48;cursor:not-allowed}
+.e-scout-count{font-weight:750;color:#56498a;font-size:12px}#e-scout-status{font-size:12px;color:#647087;line-height:1.65}
+.e-scout-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:15px 0}
+.e-scout-item{border:1px solid #dfdbe9;border-radius:12px;padding:17px;background:#fff}
+.e-scout-item-head{display:flex;gap:10px;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.e-scout-item-head strong{font-size:14px;color:#232b46}.e-scout-item p{font-size:12px;color:#647087;line-height:1.6}
+.e-scout-tag{border-radius:6px;padding:6px 8px;background:#edeafa;color:#634e96;font-size:10px;font-weight:750}
+.e-scout-tag-known,.e-scout-tag-training{background:#fff2e2;color:#81552a}
+.e-scout-tag-unmatched{background:#e4f1ef;color:#20684e}.e-scout-actions{display:flex;gap:8px}.e-scout-actions .e-btn{padding:10px 15px;font-size:11px}
+.e-scout-empty,.e-scout-disclaimer{font-size:11px;color:#778198;line-height:1.7}.e-scout-disclaimer{border-top:1px solid #e8e2f2;padding-top:14px}
+@media(max-width:800px){.e-scout-results{grid-template-columns:1fr}.e-scout-heading{display:block}.e-scout-mark{margin-top:12px}.e-scout{padding:20px}}

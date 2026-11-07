@@ -14,6 +14,7 @@ for(const name of ['app','science','model','cases','motion','navigator','release
 files['/eureka.css']=['web/eureka.css','text/css; charset=utf-8'];
 files['/eureka.mjs']=['web/eureka.mjs','text/javascript; charset=utf-8'];
 files['/eureka-quality.mjs']=['web/eureka-quality.mjs','text/javascript; charset=utf-8'];
+for(const name of ['eureka-scout','eureka-scout-quality'])files['/'+name+'.mjs']=['web/'+name+'.mjs','text/javascript; charset=utf-8'];
 files['/eureka-eye.png']=['web/eureka-eye.png','image/png'];
 files['/eureka-tutorial.vtt']=['web/eureka-tutorial.vtt','text/vtt; charset=utf-8'];
 async function readSavedCase(kind='neowise'){

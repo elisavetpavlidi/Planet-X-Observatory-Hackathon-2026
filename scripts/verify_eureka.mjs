@@ -12,6 +12,6 @@ for(const {path,sha256,size_bytes} of manifest.files){
  if(bytes.length!==size_bytes||createHash('sha256').update(bytes).digest('hex')!==sha256)throw Error(`Pinned baseline modified: ${path}`);
  verified++;
 }
-for(const file of ['web/eureka.mjs','web/eureka-quality.mjs','web/eureka.css','web/eureka-eye.png','web/eureka-tutorial.mp4','web/eureka-tutorial.vtt'])if(!existsSync(new URL(file,root)))throw Error(`EUREKA asset missing: ${file}`);
+for(const file of ['web/eureka.mjs','web/eureka-quality.mjs','web/eureka.css','web/eureka-eye.png','web/eureka-tutorial.mp4','web/eureka-tutorial.vtt','web/eureka-scout.mjs','web/eureka-scout-quality.mjs'])if(!existsSync(new URL(file,root)))throw Error(`EUREKA asset missing: ${file}`);
 console.log(`EUREKA preservation check: ${verified} original manifest files match byte-for-byte; ${PATCHED.size} UI/server files intentionally extended.`);
 console.log('Important: PACKAGE_MANIFEST.json is an unmodified *original* release reference, not a manifest of the branded EUREKA variant.');
