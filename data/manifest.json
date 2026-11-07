@@ -1,0 +1,109 @@
+{
+  "files": [
+    {
+      "path": "data/reference/m31/observation_A.fits",
+      "sha256": "b6c9a2e37cdaaff18e52f1531d8a018c07d1f0c3d6fdff70b2fb1db1947774f6",
+      "size_bytes": 5209920,
+      "obs_id": "2025W28_1B_0480_4",
+      "source": "User-supplied IRSA/SPHEREx reference cutout",
+      "access_url": null,
+      "note": "Exact original download URL was not supplied. Do not guess it; rediscover by observation ID."
+    },
+    {
+      "path": "data/reference/m31/observation_B.fits",
+      "sha256": "baedce214579321354374e84ede9ffd26149b4b239b84fb73282b2d893467cf8",
+      "size_bytes": 5212800,
+      "obs_id": "2026W01_1A_0564_3",
+      "source": "User-supplied IRSA/SPHEREx reference cutout",
+      "access_url": null,
+      "note": "Exact original download URL was not supplied. Do not guess it; rediscover by observation ID."
+    },
+    {
+      "path": "data/validation/pleiades_A.fits",
+      "sha256": "315b944e18023f9b7b363bc7f3eae6db6223489468b217d7765c4ebc0477b942",
+      "size_bytes": 5155200,
+      "obs_id": "2026W06_2A_0005_1",
+      "source": "IRSA SPHEREx QR2 live download during preparation",
+      "access_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/qr2/level2/2026W06_2A/l2b-v23-2026-040/6/level2_2026W06_2A_0005_1D6_spx_l2b-v23-2026-040.fits?center=56.75000000%2C24.11670000&size=0.13333333",
+      "note": "Compatibility control; not a validated variability pair."
+    },
+    {
+      "path": "data/validation/pleiades_B.fits",
+      "sha256": "b2f9a66fb7ed47cae49e9f79e693ec994a124c10a0642135f53b0a7cbdb7d7c8",
+      "size_bytes": 5155200,
+      "obs_id": "2026W06_2A_0243_2",
+      "source": "IRSA SPHEREx QR2 live download during preparation",
+      "access_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/qr2/level2/2026W06_2A/l2b-v23-2026-040/6/level2_2026W06_2A_0243_2D6_spx_l2b-v23-2026-040.fits?center=56.75000000%2C24.11670000&size=0.13333333",
+      "note": "Compatibility control; not a validated variability pair."
+    },
+    {
+      "path": "data/validation/m101_A.fits",
+      "sha256": "f995d8616af8afcef7331da26394eb7006da1aa51bdc5e717be1520e182e4131",
+      "size_bytes": 5152320,
+      "obs_id": "2025W51_1A_0482_1",
+      "source": "IRSA SPHEREx QR2 live download during preparation",
+      "access_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/qr2/level2/2025W51_1A/l2b-v21-2025-354/6/level2_2025W51_1A_0482_1D6_spx_l2b-v21-2025-354.fits?center=210.80230000%2C54.34900000&size=0.13333333",
+      "note": "Compatibility control; not a validated variability pair."
+    },
+    {
+      "path": "data/validation/m101_B.fits",
+      "sha256": "65a7d2b7acd6ace3ee13fae192c0254a96e12183443c21c599694c14771bd764",
+      "size_bytes": 5152320,
+      "obs_id": "2025W51_1A_0061_1",
+      "source": "IRSA SPHEREx QR2 live download during preparation",
+      "access_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/qr2/level2/2025W51_1A/l2b-v21-2025-354/6/level2_2025W51_1A_0061_1D6_spx_l2b-v21-2025-354.fits?center=210.80230000%2C54.34900000&size=0.13333333",
+      "note": "Compatibility control; not a validated variability pair."
+    },
+    {
+      "path": "data/validation/pleiades_revisit_B.fits",
+      "sha256": "163df8eb4f36f74642502a4230cc0c958451c00964c54bad89fce67398cdc125",
+      "size_bytes": 5155200,
+      "obs_id": "2026W06_2A_0005_2",
+      "source": "IRSA SPHEREx QR2 live download during preparation",
+      "access_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/qr2/level2/2026W06_2A/l2b-v23-2026-040/6/level2_2026W06_2A_0005_2D6_spx_l2b-v23-2026-040.fits?center=56.75000000%2C24.11670000&size=0.13333333",
+      "note": "Compatibility control; not a validated variability pair."
+    },
+    {
+      "path": "data/comet_3i/frame_1.fits",
+      "sha256": "c02995150ee3031bc35ab1c81b57203096ac8ef88051317b4adf503e037a44dc",
+      "size_bytes": 5348160,
+      "obs_id": "2025W32_1A_0612_1",
+      "source": "Official NASA/IPAC IRSA 3I/ATLAS table",
+      "access_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/qr2/level2/2025W32_1A/l2b-v20-2025-264/6/level2_2025W32_1A_0612_1D6_spx_l2b-v20-2025-264.fits?center=248.74323680%2C-17.04556275&size=0.23333333",
+      "note": "Predicted position; low-SNR real pixels need independent validation."
+    },
+    {
+      "path": "data/comet_3i/frame_2.fits",
+      "sha256": "10bbd12991d2bafe20f9a58092296697604b7a2df528a732086c84aee8004a18",
+      "size_bytes": 5348160,
+      "obs_id": "2025W32_1A_0637_1",
+      "source": "Official NASA/IPAC IRSA 3I/ATLAS table",
+      "access_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/qr2/level2/2025W32_1A/l2b-v20-2025-264/6/level2_2025W32_1A_0637_1D6_spx_l2b-v20-2025-264.fits?center=248.74323680%2C-17.04556275&size=0.23333333",
+      "note": "Predicted position; low-SNR real pixels need independent validation."
+    },
+    {
+      "path": "data/vesta/frame_1.fits",
+      "sha256": "f475c81501fe46a400b0f2ad961a9526b5b44fcbd3eb5fcf82e3740e7cf46bdc",
+      "size_bytes": 5152320,
+      "obs_id": "2025W32_1A_0105_1",
+      "source": "NASA/IPAC IRSA MOST actual Vesta search",
+      "access_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/qr2/level2/2025W32_1A/l2b-v20-2025-264/6/level2_2025W32_1A_0105_1D6_spx_l2b-v20-2025-264.fits?center=222.86602200%2C-11.90752800&size=0.13333333",
+      "note": "Object-centered cutout; predicted position not confirmed image detection."
+    },
+    {
+      "path": "data/vesta/frame_2.fits",
+      "sha256": "687290b195a09bed9e6651533b5d4e9421eac30e4dcf084b5e17ee309c09b3b1",
+      "size_bytes": 5152320,
+      "obs_id": "2025W32_1A_0347_1",
+      "source": "NASA/IPAC IRSA MOST actual Vesta search",
+      "access_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/qr2/level2/2025W32_1A/l2b-v20-2025-264/6/level2_2025W32_1A_0347_1D6_spx_l2b-v20-2025-264.fits?center=223.18392300%2C-12.07701400&size=0.13333333",
+      "note": "Object-centered cutout; predicted position not confirmed image detection."
+    }
+  ],
+  "cutout_center_deg": [
+    10.6847,
+    41.2688
+  ],
+  "cutout_size_arcmin": 10,
+  "status": "Real reference pair with incompatible local wavelengths; excluded from temporal variability claims."
+}

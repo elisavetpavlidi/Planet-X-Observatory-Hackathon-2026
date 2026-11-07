@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "planetx-spherex-explorer"
+version = "1.1.0"
+description = "Planet X Observatory science tools"
+requires-python = ">=3.12,<3.13"
+dependencies = []
+
+[project.scripts]
+planetx = "planetx.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["planetx*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+pythonpath = ["."]

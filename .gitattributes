@@ -1,0 +1,10 @@
+* text=auto eol=lf
+*.fits -text
+*.gz -text
+*.pdf -text
+*.png -text
+*.gif -text
+*.jpg -text
+*.jpeg -text
+*.npz -text
+*.zip -text

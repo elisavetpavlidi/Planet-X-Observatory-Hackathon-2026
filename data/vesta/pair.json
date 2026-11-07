@@ -1,0 +1,29 @@
+{
+  "frames": [
+    {
+      "obs_id": "2025W32_1A_0105_1",
+      "access_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/qr2/level2/2025W32_1A/l2b-v20-2025-264/6/level2_2025W32_1A_0105_1D6_spx_l2b-v20-2025-264.fits?center=222.86602200%2C-11.90752800&size=0.13333333",
+      "ra_deg": 222.866022,
+      "dec_deg": -11.907528,
+      "mjd": 60891.461152083,
+      "detector": "D6",
+      "target_name": "4 Vesta",
+      "position_source": "NASA/IPAC IRSA MOST prediction",
+      "path": "data/vesta/frame_1.fits",
+      "sha256": "f475c81501fe46a400b0f2ad961a9526b5b44fcbd3eb5fcf82e3740e7cf46bdc"
+    },
+    {
+      "obs_id": "2025W32_1A_0347_1",
+      "access_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/qr2/level2/2025W32_1A/l2b-v20-2025-264/6/level2_2025W32_1A_0347_1D6_spx_l2b-v20-2025-264.fits?center=223.18392300%2C-12.07701400&size=0.13333333",
+      "ra_deg": 223.183923,
+      "dec_deg": -12.077014,
+      "mjd": 60892.547158125,
+      "detector": "D6",
+      "target_name": "4 Vesta",
+      "position_source": "NASA/IPAC IRSA MOST prediction",
+      "path": "data/vesta/frame_2.fits",
+      "sha256": "687290b195a09bed9e6651533b5d4e9421eac30e4dcf084b5e17ee309c09b3b1"
+    }
+  ],
+  "warning": "Object-centered cutouts of different sky fields; predicted trajectory is not measured motion."
+}

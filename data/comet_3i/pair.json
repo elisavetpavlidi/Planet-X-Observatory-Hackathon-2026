@@ -1,0 +1,29 @@
+{
+  "frames": [
+    {
+      "path": "data/comet_3i/frame_1.fits",
+      "target_name": "3I/ATLAS",
+      "ra_deg": 248.79001446341786,
+      "dec_deg": -17.051271736672074,
+      "mjd": 60893.969916505,
+      "position_source": "NASA/IPAC IRSA table prediction",
+      "table_url": "https://irsa.ipac.caltech.edu/data/SPHEREx/docs/comet3iatlas/obscore_3I_Atlas.vot",
+      "access_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/qr2/level2/2025W32_1A/l2b-v20-2025-264/6/level2_2025W32_1A_0612_1D6_spx_l2b-v20-2025-264.fits?center=248.74323680%2C-17.04556275&size=0.23333333",
+      "sha256": "c02995150ee3031bc35ab1c81b57203096ac8ef88051317b4adf503e037a44dc",
+      "obs_id": "2025W32_1A_0612_1"
+    },
+    {
+      "path": "data/comet_3i/frame_2.fits",
+      "target_name": "3I/ATLAS",
+      "ra_deg": 248.69645913431012,
+      "dec_deg": -17.039853772731785,
+      "mjd": 60894.105995938,
+      "position_source": "NASA/IPAC IRSA table prediction",
+      "table_url": "https://irsa.ipac.caltech.edu/data/SPHEREx/docs/comet3iatlas/obscore_3I_Atlas.vot",
+      "access_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/qr2/level2/2025W32_1A/l2b-v20-2025-264/6/level2_2025W32_1A_0637_1D6_spx_l2b-v20-2025-264.fits?center=248.74323680%2C-17.04556275&size=0.23333333",
+      "sha256": "10bbd12991d2bafe20f9a58092296697604b7a2df528a732086c84aee8004a18",
+      "obs_id": "2025W32_1A_0637_1"
+    }
+  ],
+  "warning": "Predicted positions; centroid detection must be evaluated from the pixels."
+}
