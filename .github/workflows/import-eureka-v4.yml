@@ -1,0 +1,64 @@
+name: Import complete original EUREKA v4 archive
+on:
+  push:
+    branches: [eureka-v4-full-import]
+    paths: ['.github/workflows/import-eureka-v4.yml']
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out the team's repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Download and verify the original complete EUREKA v4 package
+        env:
+          EUREKA_SIGNED_URL: 'https://sdmntpritalynorth.oaiusercontent.com/files/00000000-5ee4-8246-afd2-7ffa53cfff64/raw?se=2026-11-07T11%3A03%3A11Z&sp=r&sv=2026-02-06&sr=b&scid=12e8ebc1-97af-5cd8-986c-a5a4dfcde87b&skoid=82a3371f-2f6c-4f81-8a78-2701b362559b&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-11-06T23%3A04%3A39Z&ske=2026-11-07T23%3A04%3A39Z&sks=b&skv=2026-02-06&sig=%2B2iQwnLmLN85ARD58NIMDs3RWc55kiLXRsQIkAnPbUA%3D'
+        run: |
+          set -euo pipefail
+          curl --retry 3 --retry-delay 3 -fLsS "$EUREKA_SIGNED_URL" -o /tmp/eureka-v4-original.zip
+          echo "384762f8e806e259830f8869cef76a9000cfc8e4f3420fe24de4013999a31f52  /tmp/eureka-v4-original.zip" | sha256sum -c -
+      - name: Extract 175 original files without changing their paths
+        run: |
+          python3 - <<'PY'
+          from zipfile import ZipFile
+          from pathlib import Path
+          import os
+          root=Path.cwd().resolve()
+          path=Path('/tmp/eureka-v4-original.zip')
+          prefix='EUREKA_Open_Astronomy_FULL_v4/'
+          with ZipFile(path) as zipf:
+              assert zipf.testzip() is None, "Archive checksum failed"
+              infos=[x for x in zipf.infolist() if not x.is_dir()]
+              assert len(infos)==175, f"Expected 175 files, got {len(infos)}"
+              for entry in infos:
+                  name=entry.filename
+                  assert name.startswith(prefix), name
+                  rel=Path(name[len(prefix):])
+                  assert not rel.is_absolute() and not any(x in ('.','..') for x in rel.parts), name
+                  out=(root/rel).resolve()
+                  assert out.is_relative_to(root), name
+                  out.parent.mkdir(parents=True,exist_ok=True)
+                  with zipf.open(entry) as f, out.open('wb') as target:
+                      while True:
+                          block=f.read(1024*1024)
+                          if not block: break
+                          target.write(block)
+                  mode=entry.external_attr>>16
+                  if mode&0o111:
+                      os.chmod(out,0o755)
+              print('Extracted',len(infos),'files from the exact user-provided EUREKA v4 ZIP.')
+          PY
+      - name: Commit the complete EUREKA original source and observations
+        run: |
+          set -euo pipefail
+          rm -f tools/IMPORT_FULL_EUREKA_V4.sh
+          rm -f .github/workflows/import-eureka-v4.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Import all 175 original EUREKA v4 files from user ZIP'
+          git push origin HEAD:eureka-v4-full-import
