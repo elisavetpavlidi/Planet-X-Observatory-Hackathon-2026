@@ -1,0 +1,32 @@
+{
+  "time": "2026-11-02T14:07:30.100Z",
+  "listed": 12,
+  "loaded": 9,
+  "failures": [
+    {
+      "id": "02659r140-w2",
+      "error": "The observation has insufficient valid coverage of this field."
+    },
+    {
+      "id": "02679r141-w2",
+      "error": "The observation has insufficient valid coverage of this field."
+    },
+    {
+      "id": "02681r117-w2",
+      "error": "The observation has insufficient valid coverage of this field."
+    }
+  ],
+  "tracks": [
+    {
+      "points": 4,
+      "frames": [
+        0,
+        2,
+        6,
+        7
+      ],
+      "rate": 16.552035757792616,
+      "shift": 285.7036034011292
+    }
+  ]
+}

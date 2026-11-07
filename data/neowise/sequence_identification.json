@@ -1,0 +1,109 @@
+{
+  "retrieved_on": "2026-11-02T14:13:53.613Z",
+  "points": [
+    {
+      "ra": 64.06067827974317,
+      "dec": 22.789738209077512,
+      "mjd": 58516.814486
+    },
+    {
+      "ra": 64.08910051969747,
+      "dec": 22.80081187769735,
+      "mjd": 58517.07616583
+    },
+    {
+      "ra": 64.12537147586573,
+      "dec": 22.814697254822956,
+      "mjd": 58517.40329737
+    },
+    {
+      "ra": 64.14012042789705,
+      "dec": 22.82032258186517,
+      "mjd": 58517.5336916
+    }
+  ],
+  "result": {
+    "candidates": [
+      {
+        "name": "128 Nemesis",
+        "type": "MB>Middle",
+        "separation": 0.5092827019890608,
+        "max_separation": 0.5092827019890608,
+        "checked_epochs": 4,
+        "status": "track-consistent candidate",
+        "source": "NASA/JPL Horizons, observed from WISE (-163)",
+        "horizons_url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27128%3B%27&CENTER=%27500%40-163%27&EPHEM_TYPE=%27OBSERVER%27&TLIST=%2758516.814486000+58517.076165830+58517.403297370+58517.533691600%27&TLIST_TYPE=%27MJD%27&TIME_TYPE=%27UT%27&QUANTITIES=%271%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&CAL_FORMAT=%27JD%27&CSV_FORMAT=%27YES%27&OBJ_DATA=%27NO%27"
+      }
+    ],
+    "query_url": "https://ssp.imcce.fr/webservices/skybot/api/conesearch.php?-ra=64.06067827974317&-dec=22.789738209077512&-rd=.1&-ep=2458517.314486&-loc=500&-filter=120&-objFilter=111&-refsys=EQJ2000&-output=all&-mime=json",
+    "checks": [
+      {
+        "name": "Nemesis",
+        "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27128%3B%27&CENTER=%27500%40-163%27&EPHEM_TYPE=%27OBSERVER%27&TLIST=%2758516.814486000+58517.076165830+58517.403297370+58517.533691600%27&TLIST_TYPE=%27MJD%27&TIME_TYPE=%27UT%27&QUANTITIES=%271%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&CAL_FORMAT=%27JD%27&CSV_FORMAT=%27YES%27&OBJ_DATA=%27NO%27",
+        "predicted": [
+          {
+            "jd": 2458517.314485996,
+            "ra": 64.060582782,
+            "dec": 22.789848941
+          },
+          {
+            "jd": 2458517.57616583,
+            "ra": 64.089091596,
+            "dec": 22.800904831
+          },
+          {
+            "jd": 2458517.90329737,
+            "ra": 64.125373964,
+            "dec": 22.814779418
+          },
+          {
+            "jd": 2458518.0336916,
+            "ra": 64.140024381,
+            "dec": 22.820383422
+          }
+        ],
+        "distances_arcsec": [
+          0.5092827019890608,
+          0.3359397966757572,
+          0.2959026492467576,
+          0.3867090861674392
+        ]
+      },
+      {
+        "name": "1997 NV5",
+        "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27202913%3B%27&CENTER=%27500%40-163%27&EPHEM_TYPE=%27OBSERVER%27&TLIST=%2758516.814486000+58517.076165830+58517.403297370+58517.533691600%27&TLIST_TYPE=%27MJD%27&TIME_TYPE=%27UT%27&QUANTITIES=%271%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&CAL_FORMAT=%27JD%27&CSV_FORMAT=%27YES%27&OBJ_DATA=%27NO%27",
+        "predicted": [
+          {
+            "jd": 2458517.314485996,
+            "ra": 64.02559709,
+            "dec": 22.855542204
+          },
+          {
+            "jd": 2458517.57616583,
+            "ra": 64.083303694,
+            "dec": 22.853762558
+          },
+          {
+            "jd": 2458517.90329737,
+            "ra": 64.156083713,
+            "dec": 22.851666791
+          },
+          {
+            "jd": 2458518.0336916,
+            "ra": 64.185276967,
+            "dec": 22.850949543
+          }
+        ],
+        "distances_arcsec": [
+          263.9489266690302,
+          191.59036827287446,
+          167.62059871034768,
+          186.0195910421982
+        ]
+      }
+    ],
+    "observer": "WISE spacecraft (-163), JPL Horizons astrometric RA/Dec",
+    "queried_at": "2026-11-02T14:13:53.612Z",
+    "note": "IMCCE SkyBoT geocentric preselection within 0.1 degree, nearest three candidates; every displayed match checked by JPL from the telescope. This is not an exhaustive search, particularly for close objects. A match is not a discovery confirmation."
+  }
+}

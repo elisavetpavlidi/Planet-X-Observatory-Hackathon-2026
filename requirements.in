@@ -1,0 +1,10 @@
+# Optional science tools. The web app needs only Node.js.
+# requirements.txt pins the tested Python 3.12 dependency closure for macOS/Linux.
+numpy
+scipy
+astropy
+matplotlib
+pillow
+requests
+pytest
+astroquery

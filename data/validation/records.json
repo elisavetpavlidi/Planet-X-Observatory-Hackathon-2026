@@ -1,0 +1,245 @@
+[
+  {
+    "field": "pleiades",
+    "center_deg": [
+      56.75,
+      24.1167
+    ],
+    "provenance": [
+      {
+        "path": "data/validation/pleiades_A.fits",
+        "access_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/qr2/level2/2026W06_2A/l2b-v23-2026-040/6/level2_2026W06_2A_0005_1D6_spx_l2b-v23-2026-040.fits?center=56.75000000%2C24.11670000&size=0.13333333",
+        "obs_id": "2026W06_2A_0005_1",
+        "mjd": 61076.511532037,
+        "detector": "6",
+        "shape": [
+          78,
+          78
+        ],
+        "unit": "MJy/sr",
+        "sha256": "315b944e18023f9b7b363bc7f3eae6db6223489468b217d7765c4ebc0477b942",
+        "good_pixels": 6004,
+        "total_pixels": 6084,
+        "median_sigma": 0.06051564274648848,
+        "center_ra_deg": 56.74986796811641,
+        "center_dec_deg": 24.116048113733868,
+        "wavelength_quality": "visualization lookup",
+        "median_wavelength_um": 4.595792188186088,
+        "psf_sigma_pixels": 0.5630541386170838,
+        "psf_method": "QR2 zone 81; circularized Gaussian approximation",
+        "calibration_sha256": null,
+        "mask_policy": "exploratory-qr2-v1",
+        "synthetic": false,
+        "warnings": [
+          "Real-data residuals are exploratory; PSF shape, calibration systematics and source colors need validation."
+        ]
+      },
+      {
+        "path": "data/validation/pleiades_B.fits",
+        "access_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/qr2/level2/2026W06_2A/l2b-v23-2026-040/6/level2_2026W06_2A_0243_2D6_spx_l2b-v23-2026-040.fits?center=56.75000000%2C24.11670000&size=0.13333333",
+        "obs_id": "2026W06_2A_0243_2",
+        "mjd": 61077.667940671,
+        "detector": "6",
+        "shape": [
+          78,
+          78
+        ],
+        "unit": "MJy/sr",
+        "sha256": "b2f9a66fb7ed47cae49e9f79e693ec994a124c10a0642135f53b0a7cbdb7d7c8",
+        "good_pixels": 5992,
+        "total_pixels": 6084,
+        "median_sigma": 0.07160582940467214,
+        "center_ra_deg": 56.74995839697206,
+        "center_dec_deg": 24.11671795093048,
+        "wavelength_quality": "visualization lookup",
+        "median_wavelength_um": 4.766372446249376,
+        "psf_sigma_pixels": 0.5537603191237315,
+        "psf_method": "QR2 zone 48; circularized Gaussian approximation",
+        "calibration_sha256": null,
+        "mask_policy": "exploratory-qr2-v1",
+        "synthetic": false,
+        "warnings": [
+          "Real-data residuals are exploratory; PSF shape, calibration systematics and source colors need validation."
+        ]
+      }
+    ],
+    "compatibility": {
+      "epoch_separation_days": 1.1564086340003996,
+      "same_input": false,
+      "sky_coverage_fraction": 0.9745233399079553,
+      "quality_overlap_pixels": 5546,
+      "spectral_pass_fraction": 0.0,
+      "wave_difference_median_um": 0.17047275409903095,
+      "wave_offset_in_bandwidths": 4.671850046245,
+      "wave_quality_a": "visualization lookup",
+      "wave_quality_b": "visualization lookup",
+      "blockers": [
+        "Wavelength mismatch: too few common pixels satisfy the selected bandwidth tolerance."
+      ],
+      "calibrated_wavelength": false,
+      "status": "blocked"
+    }
+  },
+  {
+    "field": "m101",
+    "center_deg": [
+      210.8023,
+      54.349
+    ],
+    "provenance": [
+      {
+        "path": "data/validation/m101_A.fits",
+        "access_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/qr2/level2/2025W51_1A/l2b-v21-2025-354/6/level2_2025W51_1A_0482_1D6_spx_l2b-v21-2025-354.fits?center=210.80230000%2C54.34900000&size=0.13333333",
+        "obs_id": "2025W51_1A_0482_1",
+        "mjd": 61026.24951331,
+        "detector": "6",
+        "shape": [
+          78,
+          78
+        ],
+        "unit": "MJy/sr",
+        "sha256": "f995d8616af8afcef7331da26394eb7006da1aa51bdc5e717be1520e182e4131",
+        "good_pixels": 5989,
+        "total_pixels": 6084,
+        "median_sigma": 0.0538074363473248,
+        "center_ra_deg": 210.80267806461663,
+        "center_dec_deg": 54.34987455227992,
+        "wavelength_quality": "visualization lookup",
+        "median_wavelength_um": 4.455826503615404,
+        "psf_sigma_pixels": 0.5863787884354049,
+        "psf_method": "QR2 zone 106; circularized Gaussian approximation",
+        "calibration_sha256": null,
+        "mask_policy": "exploratory-qr2-v1",
+        "synthetic": false,
+        "warnings": [
+          "Real-data residuals are exploratory; PSF shape, calibration systematics and source colors need validation."
+        ]
+      },
+      {
+        "path": "data/validation/m101_B.fits",
+        "access_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/qr2/level2/2025W51_1A/l2b-v21-2025-354/6/level2_2025W51_1A_0061_1D6_spx_l2b-v21-2025-354.fits?center=210.80230000%2C54.34900000&size=0.13333333",
+        "obs_id": "2025W51_1A_0061_1",
+        "mjd": 61024.281016157,
+        "detector": "6",
+        "shape": [
+          78,
+          78
+        ],
+        "unit": "MJy/sr",
+        "sha256": "65a7d2b7acd6ace3ee13fae192c0254a96e12183443c21c599694c14771bd764",
+        "good_pixels": 5967,
+        "total_pixels": 6084,
+        "median_sigma": 0.05243017619846974,
+        "center_ra_deg": 210.80344534983044,
+        "center_dec_deg": 54.348763951807946,
+        "wavelength_quality": "visualization lookup",
+        "median_wavelength_um": 4.619039768496187,
+        "psf_sigma_pixels": 0.5495765992841015,
+        "psf_method": "QR2 zone 69; circularized Gaussian approximation",
+        "calibration_sha256": null,
+        "mask_policy": "exploratory-qr2-v1",
+        "synthetic": false,
+        "warnings": [
+          "Real-data residuals are exploratory; PSF shape, calibration systematics and source colors need validation."
+        ]
+      }
+    ],
+    "compatibility": {
+      "epoch_separation_days": 1.9684971530004987,
+      "same_input": false,
+      "sky_coverage_fraction": 0.960223537146614,
+      "quality_overlap_pixels": 5402,
+      "spectral_pass_fraction": 0.0,
+      "wave_difference_median_um": 0.16314810183380102,
+      "wave_offset_in_bandwidths": 4.498800591536158,
+      "wave_quality_a": "visualization lookup",
+      "wave_quality_b": "visualization lookup",
+      "blockers": [
+        "Wavelength mismatch: too few common pixels satisfy the selected bandwidth tolerance."
+      ],
+      "calibrated_wavelength": false,
+      "status": "blocked"
+    }
+  },
+  {
+    "field": "pleiades_quick_revisit",
+    "center_deg": [
+      56.75,
+      24.1167
+    ],
+    "provenance": [
+      {
+        "path": "data/validation/pleiades_A.fits",
+        "access_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/qr2/level2/2026W06_2A/l2b-v23-2026-040/6/level2_2026W06_2A_0005_1D6_spx_l2b-v23-2026-040.fits?center=56.75000000%2C24.11670000&size=0.13333333",
+        "obs_id": "2026W06_2A_0005_1",
+        "mjd": 61076.511532037,
+        "detector": "6",
+        "shape": [
+          78,
+          78
+        ],
+        "unit": "MJy/sr",
+        "sha256": "315b944e18023f9b7b363bc7f3eae6db6223489468b217d7765c4ebc0477b942",
+        "good_pixels": 6004,
+        "total_pixels": 6084,
+        "median_sigma": 0.06051564274648848,
+        "center_ra_deg": 56.74986796811641,
+        "center_dec_deg": 24.116048113733868,
+        "wavelength_quality": "visualization lookup",
+        "median_wavelength_um": 4.595792188186088,
+        "psf_sigma_pixels": 0.5630541386170838,
+        "psf_method": "QR2 zone 81; circularized Gaussian approximation",
+        "calibration_sha256": null,
+        "mask_policy": "exploratory-qr2-v1",
+        "synthetic": false,
+        "warnings": [
+          "Real-data residuals are exploratory; PSF shape, calibration systematics and source colors need validation."
+        ]
+      },
+      {
+        "path": "data/validation/pleiades_revisit_B.fits",
+        "access_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/qr2/level2/2026W06_2A/l2b-v23-2026-040/6/level2_2026W06_2A_0005_2D6_spx_l2b-v23-2026-040.fits?center=56.75000000%2C24.11670000&size=0.13333333",
+        "obs_id": "2026W06_2A_0005_2",
+        "mjd": 61076.513024306,
+        "detector": "6",
+        "shape": [
+          78,
+          78
+        ],
+        "unit": "MJy/sr",
+        "sha256": "163df8eb4f36f74642502a4230cc0c958451c00964c54bad89fce67398cdc125",
+        "good_pixels": 5994,
+        "total_pixels": 6084,
+        "median_sigma": 0.06272433669385669,
+        "center_ra_deg": 56.74961342272402,
+        "center_dec_deg": 24.11654282306164,
+        "wavelength_quality": "visualization lookup",
+        "median_wavelength_um": 4.62953041553939,
+        "psf_sigma_pixels": 0.5599499915407785,
+        "psf_method": "QR2 zone 70; circularized Gaussian approximation",
+        "calibration_sha256": null,
+        "mask_policy": "exploratory-qr2-v1",
+        "synthetic": false,
+        "warnings": [
+          "Real-data residuals are exploratory; PSF shape, calibration systematics and source colors need validation."
+        ]
+      }
+    ],
+    "compatibility": {
+      "epoch_separation_days": 0.0014922689952072687,
+      "same_input": false,
+      "sky_coverage_fraction": 0.9745233399079553,
+      "quality_overlap_pixels": 5531,
+      "spectral_pass_fraction": 0.0,
+      "wave_difference_median_um": 0.03365034271212952,
+      "wave_offset_in_bandwidths": 0.9184118548212278,
+      "wave_quality_a": "visualization lookup",
+      "wave_quality_b": "visualization lookup",
+      "blockers": [
+        "Wavelength mismatch: too few common pixels satisfy the selected bandwidth tolerance."
+      ],
+      "calibrated_wavelength": false,
+      "status": "blocked"
+    }
+  }
+]

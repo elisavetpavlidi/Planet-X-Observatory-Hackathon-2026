@@ -1,0 +1,14 @@
+PLANET X OBSERVATORY — FINAL RELEASE 1.1.0
+
+1. Install Node.js 24.22.1 (tested version).
+2. Open Terminal INSIDE this folder. You should see package.json, web, data, scripts.
+3. Run: bash scripts/setup.sh
+4. Run: bash scripts/run.sh
+5. Open http://127.0.0.1:8501
+
+Stop: Ctrl+C. Next time: bash scripts/run.sh
+
+Exact reproduction: REPRODUCE.md
+Greek user guide: docs/Planet_X_User_Guide_EL.pdf
+English app. Original real observations included. No Python/npm packages needed for the web app.
+Keep the entire folder. New NASA searches and new identity checks require internet.

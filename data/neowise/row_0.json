@@ -1,0 +1,48 @@
+{
+  "in_row_id": "1",
+  "in_ra": "64.046492000000001",
+  "in_dec": "22.784341999999999",
+  "band": "2",
+  "crval1": "63.743391469458",
+  "crval2": "22.442899416480",
+  "ra1": "63.250257953685",
+  "dec1": "22.755191403367",
+  "ra2": "64.087549101217",
+  "dec2": "22.891417803589",
+  "ra3": "64.231201816118",
+  "dec3": "22.130441472523",
+  "ra4": "63.398159606739",
+  "dec4": "21.992288379711",
+  "magzp": "19.64350",
+  "magzpunc": "-9.990000",
+  "modeint": "48.081",
+  "scan_id": "02659r",
+  "scangrp": "9r",
+  "frame_num": "140",
+  "date_obs": "2019-02-02 16:24:21.521",
+  "mjd_obs": "58516.68358242",
+  "dtanneal": "999999.00000000000",
+  "utanneal": "2016-11-20 03:23:20.494",
+  "exptime": "7.7",
+  "debgain": "",
+  "febgain": "",
+  "moon_sep": "136.921",
+  "saa_sep": "55.436",
+  "qa_status": "Prelim",
+  "qual_frame": "10",
+  "qual_scan": "5",
+  "files": {
+    "int": {
+      "file": "02659r140-w2-int.fits",
+      "url": "https://irsa.ipac.caltech.edu/ibe/data/wise/neowiser/p1bm_frm/9r/02659r/140/02659r140-w2-int-1b.fits?center=64.085%2C22.80&size=0.12"
+    },
+    "unc": {
+      "file": "02659r140-w2-unc.fits",
+      "url": "https://irsa.ipac.caltech.edu/ibe/data/wise/neowiser/p1bm_frm/9r/02659r/140/02659r140-w2-unc-1b.fits.gz?center=64.085%2C22.80&size=0.12"
+    },
+    "msk": {
+      "file": "02659r140-w2-msk.fits",
+      "url": "https://irsa.ipac.caltech.edu/ibe/data/wise/neowiser/p1bm_frm/9r/02659r/140/02659r140-w2-msk-1b.fits.gz?center=64.085%2C22.80&size=0.12"
+    }
+  }
+}
